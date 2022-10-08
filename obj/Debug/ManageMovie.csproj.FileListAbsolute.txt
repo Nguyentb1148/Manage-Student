@@ -1,0 +1,6 @@
+/Users/tranbaonguyen/ManageMovie/bin/Debug/ManageMovie.exe
+/Users/tranbaonguyen/ManageMovie/bin/Debug/ManageMovie.pdb
+/Users/tranbaonguyen/ManageMovie/obj/Debug/ManageMovie.csproj.AssemblyReference.cache
+/Users/tranbaonguyen/ManageMovie/obj/Debug/ManageMovie.csproj.CoreCompileInputs.cache
+/Users/tranbaonguyen/ManageMovie/obj/Debug/ManageMovie.exe
+/Users/tranbaonguyen/ManageMovie/obj/Debug/ManageMovie.pdb
