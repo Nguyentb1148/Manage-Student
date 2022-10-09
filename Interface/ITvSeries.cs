@@ -5,6 +5,6 @@ namespace ManageMovie.Interface
 {
     public interface ITvSeries : IMovie
     {
-        List<IMovie> Season { get; set; }
+        List<Season> Season { get; set; }
     }
 }

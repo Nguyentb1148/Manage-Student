@@ -4,12 +4,14 @@ namespace ManageMovie.Interface
 {
     public interface IMovie
     {
-        string Id { get; set; }
+        int Id { get; set; }
+        string IdFilm { get; set; }
+        string Name { get; set; }
         string Kind { get; set; }
         string Director { get; set; }
         string FilmClassification { get; set; }
         string FilmAdaptation { get; set; }
-        string Review { get; set; }
+        DateTime FilmDuration { get; set; }
         DateTime ReleaseDate { get; set; }
         double ImdbPoints { get; set; }
     }
