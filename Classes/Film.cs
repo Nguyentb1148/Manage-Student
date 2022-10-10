@@ -61,7 +61,6 @@ namespace ManageMovie.Classes
         public DateTime ReleaseDate { get => releaseDate; set => releaseDate = value; }
         public double ImdbPoints { get => imdbPoints; set => imdbPoints = value; }
         public string IdFilm { get => idFilm; set => idFilm = value; }
-
         public void AddFilm()
         {
             Film film = new Film();
@@ -80,7 +79,6 @@ namespace ManageMovie.Classes
                     goto InputIdFlim;
                 }
             }
-
             //Input Name of film
             Console.Write("Enter Name : ");
             film.Name = Console.ReadLine();
@@ -120,6 +118,7 @@ namespace ManageMovie.Classes
                     film.FilmClassification = "NR-17";
                     break;
                 case 6:
+                    
                     film.FilmClassification = Console.ReadLine();
                     break;
             }
@@ -157,6 +156,7 @@ namespace ManageMovie.Classes
                     film.filmAdaptation = "Video game";
                     break;
                 case 7:
+                    Console.Write("Input the source to be adapted: ");
                     film.filmAdaptation = Console.ReadLine();
                     break;
             }
@@ -190,25 +190,38 @@ namespace ManageMovie.Classes
             //Input Release date
             try
             {
+                string[] formats = { "MM/dd/yyyy" };
+                DateTime parsedDateTime;
                 if (DateTime.TryParseExact(filmReleaseTime, formatDateTime, new CultureInfo("en-US"),
-                        DateTimeStyles.None, out  dateValue2))
+                        DateTimeStyles.None, out parsedDateTime))
                 {
                     film.ReleaseDate = DateTime.Parse(filmReleaseTime);
+                }
+                else
+                {
+                    goto InputFilmReleaseTime;
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("Wrong");
+                Console.WriteLine("The date is not in the correct format!");
+                Console.WriteLine("Should be dd/mm/yyyy"); 
                 goto InputFilmReleaseTime;
             }
+
+            InputImDbPoints:
             //Input Imdb points
             Console.Write("Enter Imdb points: ");
             film.ImdbPoints = double.Parse(Console.ReadLine());
+            if (film.ImdbPoints > 10)
+            {
+                Console.WriteLine("ImdbPoints cannot greater than 10");
+                goto  InputImDbPoints;
+            }
             //Add to list film
             listFilms.Add(film);
             Console.WriteLine("Successfully inserted");
         }
-
         public void ViewListFilms()
         {
             var table = new Table();
@@ -221,7 +234,7 @@ namespace ManageMovie.Classes
             }
             Console.WriteLine(table.ToString());
         }
-        public void SearchFilmById( string search)
+        public void SearchFilmById(string search)
         {
             bool found = false;
             
