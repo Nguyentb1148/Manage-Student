@@ -61,7 +61,8 @@ namespace ManageMovie.Classes
         public DateTime ReleaseDate { get => releaseDate; set => releaseDate = value; }
         public double ImdbPoints { get => imdbPoints; set => imdbPoints = value; }
         public string IdFilm { get => idFilm; set => idFilm = value; }
-        public void AddFilm()
+
+        public  void AddFilm()
         {
             Film film = new Film();
             bool containsItem = false;
@@ -222,7 +223,8 @@ namespace ManageMovie.Classes
             listFilms.Add(film);
             Console.WriteLine("Successfully inserted");
         }
-        public void ViewListFilms()
+
+        public void ViewListFilm()
         {
             var table = new Table();
 
@@ -232,9 +234,9 @@ namespace ManageMovie.Classes
             {
                 table.AddRow($"{i.Id}", i.IdFilm, i.Name, i.Kind, i.Director, i.FilmClassification,i.FilmAdaptation,i.FilmDuration.ToString("hh:mm:ss"),i.ReleaseDate.ToString("dd/MM/yyyy"),i.ImdbPoints.ToString());
             }
-            Console.WriteLine(table.ToString());
-        }
-        public void SearchFilmById(string search)
+            Console.WriteLine(table.ToString());        }
+
+        public void SearchFilmByID(string search)
         {
             bool found = false;
             
@@ -254,19 +256,19 @@ namespace ManageMovie.Classes
             if (!found)
             {
                 Console.WriteLine("No Film was found!");
-            }
-        }
-        public void DeleteFilmById(string search)
+            }        }
+
+        public void DeleteFilmByID(string search)
         {
-            SearchFilmById(search);
+            SearchFilmByID(search);
             var itemToRemove = listFilms.SingleOrDefault(r => r.Id == 2);
             if (itemToRemove != null)
                 listFilms.Remove(itemToRemove);
-            Console.WriteLine("Successfully Deleted");
-        }
-        public void UpdateFilmById(string search)
+            Console.WriteLine("Successfully Deleted");        }
+
+        public void UpdateFilmByID(string search)
         {
-            bool found = false;
+             bool found = false;
             
             foreach (Film i in listFilms)
             {
@@ -310,7 +312,7 @@ namespace ManageMovie.Classes
                 Console.WriteLine("No Film was found!");
             }
         }
-        public void SortFilmByYear()
+        public void SoftFilmByID()
         {
             List<Film> sortedList = listFilms.OrderBy(o=>o.ReleaseDate).ToList();
             sortedList.Reverse();
@@ -322,7 +324,7 @@ namespace ManageMovie.Classes
             {
                 table.AddRow($"{i.Id}", i.IdFilm, i.Name, i.Kind, i.Director, i.FilmClassification,i.FilmAdaptation,i.FilmDuration.ToString("hh:mm:ss"),i.ReleaseDate.ToString("dd/MM/yyyy"),i.ImdbPoints.ToString());
             }
-            Console.WriteLine(table.ToString());
+            Console.WriteLine(table.ToString());        
         }
     }
 }

@@ -55,25 +55,25 @@ namespace ManageMovie
                         film.AddFilm();
                         break;
                     case 2:
-                        film.ViewListFilms();
+                        film.ViewListFilm();
                         break;
                     case 3:
                         Console.Write("Input Id film to search: ");
                         search = Console.ReadLine();
-                        film.UpdateFilmById(search);
+                        film.UpdateFilmByID(search);
                         break;
                     case 4:
-                        film.SortFilmByYear();
+                        film.SoftFilmByID();
                         break;
                     case 5:
                         Console.Write("Input Id film to search: ");
                         search = Console.ReadLine();
-                        film.SearchFilmById(search);
+                        film.SearchFilmByID(search);
                         break;
                     case 6:
                         Console.Write("Input Id film to search: ");
                         search = Console.ReadLine();
-                        film.DeleteFilmById(search);
+                        film.DeleteFilmByID(search);
                         break;
                     case 7:
                         MainMenu();

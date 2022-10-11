@@ -45,5 +45,34 @@ namespace ManageMovie.Classes
         public string IdFilm { get => idFilm; set => idFilm = value; }
         public double ImdbPoints { get => imdbPoints; set => imdbPoints = value; }
         
+        public void AddFilm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ViewListFilm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SearchFilmByID(string search)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteFilmByID(string s)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateFilmByID(string s)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SoftFilmByID()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
