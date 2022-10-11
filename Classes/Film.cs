@@ -10,7 +10,7 @@ using Microsoft.SqlServer.Server;
 
 namespace ManageMovie.Classes
 {
-    public class Film : IFilm
+    public class Film : IMovie
     {
         private static List<Film> listFilms = new List<Film>();
         private int id;

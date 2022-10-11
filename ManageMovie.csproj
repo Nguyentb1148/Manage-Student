@@ -44,7 +44,6 @@
         <Compile Include="Classes\Season.cs" />
         <Compile Include="Classes\Table.cs" />
         <Compile Include="Classes\TvSeries.cs" />
-        <Compile Include="Interface\IFilm.cs" />
         <Compile Include="Interface\IMovie.cs" />
         <Compile Include="Interface\ITvSeries.cs" />
         <Compile Include="Program.cs" />
