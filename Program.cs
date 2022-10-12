@@ -7,38 +7,16 @@ namespace ManageMovie
     {
         public static void Main(string[] args)
         {
-            MainMenu();
+            MenuFilm();
         }
-        private static void MainMenu()
-        {
-            int choice=0;
-            while (choice!=3)
-            {
-                Console.WriteLine("---------- NguyenFlix ----------");
-                Console.WriteLine("|1: Film                       |");
-                Console.WriteLine("|2: Tv series                  |");
-                Console.WriteLine("|3: Exit                       |");
-                Console.WriteLine("--------------------------------");
-                choice = int.Parse(Console.ReadLine());
-                switch (choice)
-                {
-                    case 1:
-                        MenuFilm();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                }
-            }
-        }
+
         private static void MenuFilm()
         {
-            
+            int choice=0;
             Film film = new Film();
             string search;
             film.FilmAdd();
-            while (true)
+            while (choice!=7)
             {
                 Console.WriteLine("---------- NguyenFlix ---------");
                 Console.WriteLine("1: Add New Film ");
@@ -48,7 +26,8 @@ namespace ManageMovie
                 Console.WriteLine("5: Search Film ");
                 Console.WriteLine("6: Delete Film ");
                 Console.WriteLine("7: Back to Main Menu");
-                int choice = int.Parse(Console.ReadLine());
+                Console.Write("Enter your choice: ");
+                choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
@@ -75,8 +54,9 @@ namespace ManageMovie
                         search = Console.ReadLine();
                         film.DeleteFilmByID(search);
                         break;
-                    case 7:
-                        MainMenu();
+                   case 7:
+                       Console.WriteLine("-------------------------------");
+                        Console.WriteLine("Goodbye.");
                         break;
                 }
             }
@@ -84,50 +64,4 @@ namespace ManageMovie
         }
         
     }
-    /*        private static void MenuTvSeries()
-        {
-            TvSeries tvSeries = new TvSeries();
-            Season season = new Season();
-            tvSeries.AddTvSerie();
-            string search;
-            while (true)
-            {
-                Console.WriteLine("---------- NguyenFlix ---------");
-                Console.WriteLine("1: Add New Tv Series ");
-                Console.WriteLine("2: View List Series  ");
-                Console.WriteLine("3: Update information of Series");
-                Console.WriteLine("4: Soft Tv series ");
-                Console.WriteLine("5: Search Tv series ");
-                Console.WriteLine("6: Delete Tv series ");
-                Console.WriteLine("7: Back to Main Menu");
-                int choice = int.Parse(Console.ReadLine());
-                switch (choice)
-                {
-                    case 1:
-                        tvSeries.AddTvSeries();
-                        break;
-                    case 2:
-                        tvSeries.ViewListTvSeries();
-                        break;
-                    case 3:
-                        Console.Write("Input Id film to search: ");
-                        search = Console.ReadLine();
-                        break;
-                    case 4:
-                        
-                        break;
-                    case 5:
-                        Console.Write("Input Id film to search: ");
-                        search = Console.ReadLine();
-                        break;
-                    case 6:
-                        Console.Write("Input Id film to search: ");
-                        search = Console.ReadLine();
-                        break;
-                    case 7:
-                        MainMenu();
-                        break;
-                }
-            }
-        }*/
 }

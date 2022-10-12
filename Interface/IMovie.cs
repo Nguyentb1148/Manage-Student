@@ -1,4 +1,5 @@
 using System;
+using ManageMovie.Classes;
 
 namespace ManageMovie.Interface
 {
@@ -17,7 +18,7 @@ namespace ManageMovie.Interface
 
         void AddFilm();
         void ViewListFilm();
-        void SearchFilmByID(string search);
+        void SearchFilmByID(string s);
         void DeleteFilmByID(string s);
         void UpdateFilmByID(string s);
         void SoftFilmByID();

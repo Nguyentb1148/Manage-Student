@@ -23,7 +23,14 @@ namespace ManageMovie.Classes
         private DateTime filmDuration;
         private DateTime releaseDate;
         private double imdbPoints;
-
+        
+        // public through get set
+        public static List<Film> ListFilms
+        {
+            get { return listFilms; }
+            set { listFilms = value; }
+        }
+        
         public Film(int id, string name, string idFilm, string kind, string director, string filmClassification, string filmAdaptation, DateTime filmDuration, DateTime releaseDate, double imdbPoints)
         {
             this.Id = id;
@@ -62,10 +69,9 @@ namespace ManageMovie.Classes
         public double ImdbPoints { get => imdbPoints; set => imdbPoints = value; }
         public string IdFilm { get => idFilm; set => idFilm = value; }
 
-        public  void AddFilm()
+        public void AddFilm()
         {
             Film film = new Film();
-            bool containsItem = false;
             //Increment Id
             film.Id = listFilms.Count + 1;
             InputIdFlim:
@@ -89,7 +95,6 @@ namespace ManageMovie.Classes
             //Input Director
             Console.Write("Enter Director of film: ");
             film.Director = Console.ReadLine();
-
             //Input Film classification
             Console.WriteLine("--------------MPA film ratings-------------");
             Console.WriteLine("|1:G – General Audiences                  |");
@@ -191,7 +196,6 @@ namespace ManageMovie.Classes
             //Input Release date
             try
             {
-                string[] formats = { "MM/dd/yyyy" };
                 DateTime parsedDateTime;
                 if (DateTime.TryParseExact(filmReleaseTime, formatDateTime, new CultureInfo("en-US"),
                         DateTimeStyles.None, out parsedDateTime))
@@ -223,7 +227,7 @@ namespace ManageMovie.Classes
             listFilms.Add(film);
             Console.WriteLine("Successfully inserted");
         }
-
+     
         public void ViewListFilm()
         {
             var table = new Table();
@@ -234,7 +238,9 @@ namespace ManageMovie.Classes
             {
                 table.AddRow($"{i.Id}", i.IdFilm, i.Name, i.Kind, i.Director, i.FilmClassification,i.FilmAdaptation,i.FilmDuration.ToString("hh:mm:ss"),i.ReleaseDate.ToString("dd/MM/yyyy"),i.ImdbPoints.ToString());
             }
-            Console.WriteLine(table.ToString());        }
+            Console.WriteLine(table.ToString());
+            
+        }
 
         public void SearchFilmByID(string search)
         {
@@ -261,11 +267,13 @@ namespace ManageMovie.Classes
         public void DeleteFilmByID(string search)
         {
             SearchFilmByID(search);
-            var itemToRemove = listFilms.SingleOrDefault(r => r.Id == 2);
+            var itemToRemove = listFilms.SingleOrDefault(r => r.IdFilm ==search);
             if (itemToRemove != null)
+            {
                 listFilms.Remove(itemToRemove);
-            Console.WriteLine("Successfully Deleted");        }
-
+                Console.WriteLine("Successfully Deleted"); 
+            }
+        }
         public void UpdateFilmByID(string search)
         {
              bool found = false;

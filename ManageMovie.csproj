@@ -41,11 +41,8 @@
     <ItemGroup>
         <Compile Include="Classes\Film.cs" />
         <Compile Include="Classes\Movie.cs" />
-        <Compile Include="Classes\Season.cs" />
         <Compile Include="Classes\Table.cs" />
-        <Compile Include="Classes\TvSeries.cs" />
         <Compile Include="Interface\IMovie.cs" />
-        <Compile Include="Interface\ITvSeries.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
