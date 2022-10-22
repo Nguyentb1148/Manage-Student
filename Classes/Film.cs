@@ -52,6 +52,8 @@ namespace ManageMovie.Classes
             listFilms.Add(new Film(2,"John Wick: Chapter 2","F002","Action","Chad Stahelski", "R","Null",DateTime.Parse("02:02:00"),DateTime.Parse("02/10/2017"),7.4));
             listFilms.Add(new Film(3,"John Wick: Chapter 3 - Parabellum","F003","Action","Chad Stahelski", "R","Null",DateTime.Parse("02:10:00"),DateTime.Parse("05/17/2019"),7.4));
             listFilms.Add(new Film(4,"The Fellowship of the Ring","F004","Action,Adventure","Peter Jackson", "PG-13","novels",DateTime.Parse("02:58:00"),DateTime.Parse("12/19/2001"),7.4));
+            listFilms.Add(new Film(5,"The Fellowship of the Ring 2","F004","Action,Adventure","Peter Jackson", "PG-13","novels",DateTime.Parse("02:58:00"),DateTime.Parse("12/19/2001"),7.4));
+
         }
 
         public Film()
