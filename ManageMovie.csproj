@@ -42,6 +42,7 @@
         <Compile Include="Classes\Film.cs" />
         <Compile Include="Classes\Movie.cs" />
         <Compile Include="Classes\Table.cs" />
+        <Compile Include="Classes\Validator.cs" />
         <Compile Include="Interface\IMovie.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

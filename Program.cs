@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using ManageMovie.Classes;
 
 namespace ManageMovie
@@ -9,7 +10,6 @@ namespace ManageMovie
         {
             MenuFilm();
         }
-
         private static void MenuFilm()
         {
             int choice=0;
@@ -31,7 +31,17 @@ namespace ManageMovie
                 switch (choice)
                 {
                     case 1:
-                        film.AddFilm();
+                        try
+                        {
+                            StringBuilder sb = new StringBuilder();
+                            film.AddFilm();
+                            Validator.checkEmpty();
+                        }
+                        catch (Exception e)
+                        {
+                            
+                        }
+                       
                         break;
                     case 2:
                         film.ViewListFilm();

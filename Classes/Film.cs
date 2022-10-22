@@ -137,7 +137,7 @@ namespace ManageMovie.Classes
             Console.WriteLine("|4:Play adaptations                       |");
             Console.WriteLine("|5:Television adaptations                 |");
             Console.WriteLine("|6:Video game adaptations                 |");
-            Console.WriteLine("|7. Other                                 |");
+            Console.WriteLine("|7.Other                                  |");
             Console.WriteLine("-------------------------------------------");
             Console.Write("Enter Film Classification: ");
             choice = int.Parse(Console.ReadLine());
